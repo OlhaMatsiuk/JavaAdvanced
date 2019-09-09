@@ -5,6 +5,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.xml.DOMConfigurator;
+
 import ua.lviv.lgs.basic.Magazine;
 import ua.lviv.lgs.dao.MagazineDao;
 import ua.lviv.lgs.basic.User;
@@ -14,14 +17,28 @@ import ua.lviv.lgs.dao.SubscribersDao;
 import ua.lviv.lgs.service.ConnectionUtils;
 
 public class MagazineShop {
+	
+	private static Logger LOG = Logger.getLogger(MagazineShop.class);	
+	
 	public static void main(String[] args)
 			throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
+		
+		DOMConfigurator.configure("loggerConfiguration.xml");	
 
-/*		// TABLE MAGAZINE ------------------------------------------------
+		// TABLE MAGAZINE ------------------------------------------------
 		MagazineDao magazineDao = new MagazineDao(ConnectionUtils.openConnection());
-
+	
+		System.out.println("************************************************\n");
+		
 		List<Magazine> listOfMagazine = new ArrayList<>();
-		listOfMagazine.add(new Magazine("Da Vinci", "science", 120.00, LocalDate.parse("2019-01-01")));
+	
+		String title = " vinci";
+		
+		if(title == "Da vinci") 
+			listOfMagazine.add(new Magazine(title, "science", 120.00, LocalDate.parse("2019-01-01")));
+		else LOG.error("title not found");
+		
+		
 		listOfMagazine.add(new Magazine("Science", "science", 100.50, LocalDate.parse("2019-03-01")));
 		listOfMagazine.add(new Magazine("Love", "beauty", 230.60, LocalDate.parse("2018-12-01")));
 		listOfMagazine.add(new Magazine("Do-do", "natural", 10.00, LocalDate.parse("2008-10-11")));
@@ -31,7 +48,7 @@ public class MagazineShop {
 			try {
 				magazineDao.insert(mag);
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
+				LOG.error("Erorr SQLException");
 				e.printStackTrace();
 			}
 		});
@@ -60,7 +77,7 @@ public class MagazineShop {
 		// READ-ALL
 		magazineDao.readAll().forEach(System.out::print);
 		System.out.println("************************************************\n");
-*/
+
 
 /*		// TABLE USER ------------------------------------------------
 		UserDao userDao = new UserDao(ConnectionUtils.openConnection());
