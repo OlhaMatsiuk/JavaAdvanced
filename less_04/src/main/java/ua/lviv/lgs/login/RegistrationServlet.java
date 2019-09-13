@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import ua.lviv.lgs.basic.User;
 
-//@WebServlet("/registration")
+@WebServlet("/registration")
 public class RegistrationServlet extends HttpServlet{
 	
 	private static final long serialVersionUID = 1L;

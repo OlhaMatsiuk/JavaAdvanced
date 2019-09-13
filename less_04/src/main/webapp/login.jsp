@@ -11,7 +11,7 @@
 
 	<jsp:include page="header.jsp"></jsp:include>
 	
-	<form action="registration" method="post">
+	<form action="login" method="post">
 	
 		<label for="email">Email :</label> <input name="email">
 			<br>	
