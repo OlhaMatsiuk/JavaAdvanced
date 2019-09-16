@@ -1,9 +1,12 @@
 package ua.lviv.lgs.login;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 import ua.lviv.lgs.basic.User;
+import ua.lviv.lgs.dao.UserDao;
+import ua.lviv.lgs.service.ConnectionUtils;
 
 public class UserService {
 	
@@ -23,8 +26,10 @@ public class UserService {
 		return listOfUsers;
 	}
 
-	public void saveUser(User user) {
+	public void saveUser(User user) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
 		listOfUsers.add(user);
+		UserDao UserDao = new UserDao(ConnectionUtils.openConnection());
+		UserDao.insert(user);
 	}
 
 	public User getUser(String email) {
