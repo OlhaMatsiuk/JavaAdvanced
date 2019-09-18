@@ -16,7 +16,7 @@
 		<servlet-name>registration</servlet-name>
 		<url-pattern>/registration</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>login</servlet-name>
 		<servlet-class>ua.lviv.lgs.login.LoginServlet</servlet-class>
