@@ -1,6 +1,5 @@
-package ua.lviv.lgs.basic;
+package logos.basic;
 
-import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;

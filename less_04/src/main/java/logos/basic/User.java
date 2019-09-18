@@ -1,4 +1,4 @@
-package ua.lviv.lgs.basic;
+package logos.basic;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

@@ -1,4 +1,4 @@
-package ua.lviv.lgs.dao;
+package logos.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,9 +7,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import ua.lviv.lgs.basic.Magazine;
-import ua.lviv.lgs.basic.Subscribers;
-import ua.lviv.lgs.basic.User;
+import logos.basic.Magazine;
+import logos.basic.Subscribers;
+import logos.basic.User;
 
 public class UserDao {
 

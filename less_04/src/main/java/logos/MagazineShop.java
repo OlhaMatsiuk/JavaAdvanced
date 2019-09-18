@@ -1,4 +1,4 @@
-package ua.lviv.lgs;
+package logos;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -8,13 +8,13 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 
-import ua.lviv.lgs.basic.Magazine;
-import ua.lviv.lgs.dao.MagazineDao;
-import ua.lviv.lgs.basic.User;
-import ua.lviv.lgs.dao.UserDao;
-import ua.lviv.lgs.basic.Subscribers;
-import ua.lviv.lgs.dao.SubscribersDao;
-import ua.lviv.lgs.service.ConnectionUtils;
+import logos.basic.Magazine;
+import logos.dao.MagazineDao;
+import logos.basic.User;
+import logos.dao.UserDao;
+import logos.basic.Subscribers;
+import logos.dao.SubscribersDao;
+import logos.service.ConnectionUtils;
 
 public class MagazineShop {
 	

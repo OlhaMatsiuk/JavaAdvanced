@@ -1,4 +1,4 @@
-package ua.lviv.lgs.login;
+package logos.login;
 
 import java.io.IOException;
 
@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ua.lviv.lgs.basic.User;
+import logos.basic.User;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {

@@ -1,12 +1,13 @@
-package ua.lviv.lgs.login;
+package logos.login;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import ua.lviv.lgs.basic.User;
-import ua.lviv.lgs.dao.UserDao;
-import ua.lviv.lgs.service.ConnectionUtils;
+import logos.basic.User;
+import logos.dao.UserDao;
+import logos.service.ConnectionUtils;
+
 
 public class UserService {
 	

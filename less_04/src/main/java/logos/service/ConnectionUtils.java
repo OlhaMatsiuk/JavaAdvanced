@@ -1,4 +1,4 @@
-package ua.lviv.lgs.service;
+package logos.service;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,4 +1,4 @@
-package ua.lviv.lgs.dao;
+package logos.dao;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -11,7 +11,7 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 
-import ua.lviv.lgs.basic.Magazine;
+import logos.basic.Magazine;
 
 public class MagazineDao {
 

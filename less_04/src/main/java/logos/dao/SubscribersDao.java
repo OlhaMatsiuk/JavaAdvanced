@@ -1,4 +1,4 @@
-package ua.lviv.lgs.dao;
+package logos.dao;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import ua.lviv.lgs.basic.Subscribers;
+import logos.basic.Subscribers;
 
 public class SubscribersDao {
 
