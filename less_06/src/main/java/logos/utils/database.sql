@@ -15,7 +15,8 @@ create table user(
     first_name varchar(90) not null,
     last_name varchar(100) not null,
 	email varchar(50) not null unique,
-    password varchar(10) not null
+    password varchar(10) not null,
+    role varchar(10) not null
 );
 
 create table subscriptions(

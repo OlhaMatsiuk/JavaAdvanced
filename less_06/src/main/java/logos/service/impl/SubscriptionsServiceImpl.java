@@ -9,10 +9,19 @@ import logos.service.SubscriptionsService;
 
 public class SubscriptionsServiceImpl implements SubscriptionsService{
 	
-    SubscriptionsDao subscriptionsDao;
+    private SubscriptionsDao subscriptionsDao;
+    private SubscriptionsService subscriptionServiceImpl;
 	
-	public SubscriptionsServiceImpl() {
+	private SubscriptionsServiceImpl() {
 		subscriptionsDao = new SubscriptionsDaoImpl();
+	}
+	
+	public SubscriptionsService getSubscriptionService() {
+		if (subscriptionServiceImpl == null) {
+			subscriptionServiceImpl = new SubscriptionsServiceImpl();
+		}
+
+		return subscriptionServiceImpl;
 	}
 
 	@Override

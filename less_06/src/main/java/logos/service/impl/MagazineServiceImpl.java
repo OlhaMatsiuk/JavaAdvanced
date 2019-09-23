@@ -9,10 +9,19 @@ import logos.service.MagazineService;
 
 public class MagazineServiceImpl implements MagazineService{
 
-	MagazineDao magazineDao;
+	private MagazineDao magazineDao;
+	private static MagazineService magazineServiceImp;
 	
-	public MagazineServiceImpl() {
+	private MagazineServiceImpl() {
 		magazineDao = new MagazineDaoImpl();
+	}
+	
+	public static MagazineService getMagazinetService() {
+		if (magazineServiceImp == null) {
+			magazineServiceImp = new MagazineServiceImpl();
+		}
+
+		return magazineServiceImp;
 	}
 
 	@Override

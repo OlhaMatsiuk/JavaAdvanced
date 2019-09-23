@@ -9,6 +9,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import logos.dao.MagazineDao;
 import logos.domain.Magazine;
 import logos.utils.ConnectionUtils;
@@ -23,13 +25,14 @@ public class MagazineDaoImpl implements MagazineDao{
 	
 	private Connection connection;
 	private PreparedStatement preparedStatement;
+	private static Logger LOGGER = Logger.getLogger(MagazineDaoImpl.class);
 	
 	public MagazineDaoImpl() {
 		try {
 			this.connection = ConnectionUtils.openConnection();
 			
 		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
-			e.printStackTrace();
+			LOGGER.error(e);
 		}
 	}
 	
@@ -48,7 +51,7 @@ public class MagazineDaoImpl implements MagazineDao{
 			magazine.setId(rs.getInt(1));
 			
 		} catch (SQLException e) {
-			e.printStackTrace();
+			LOGGER.error(e);
 		}
 		
 		return magazine;
@@ -65,7 +68,7 @@ public class MagazineDaoImpl implements MagazineDao{
 			magazine = Magazine.map(result);
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			LOGGER.error(e);
 		}
 
 		return magazine;
@@ -82,7 +85,7 @@ public class MagazineDaoImpl implements MagazineDao{
 			preparedStatement.setInt(5, magazine.getId());
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
-			e.printStackTrace();
+			LOGGER.error(e);
 		}
 		return magazine;
 	}
@@ -94,7 +97,7 @@ public class MagazineDaoImpl implements MagazineDao{
 			preparedStatement.setInt(1, id);
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
-			e.printStackTrace();
+			LOGGER.error(e);
 		}
 	}
 
@@ -108,7 +111,7 @@ public class MagazineDaoImpl implements MagazineDao{
 				listOfMagazine.add(Magazine.map(result));
 			}
 		}catch (SQLException e) {
-			e.printStackTrace();
+			LOGGER.error(e);
 		}
 		return listOfMagazine;
 	}

@@ -10,22 +10,23 @@ public class User {
 	private String last_name;
 	private String email;
 	private String password;
-
-	public User(int id, String first_name, String last_name, String email, String password) {
-		super();
+	private String role;
+	
+	public User(String first_name, String last_name, String email, String password, String role) {
+		this.first_name = first_name;
+		this.last_name = last_name;
+		this.email = email;
+		this.password = password;
+		this.role = role;
+	}
+	
+	public User(int id, String first_name, String last_name, String email, String password, String role) {
 		this.id = id;
 		this.first_name = first_name;
 		this.last_name = last_name;
 		this.email = email;
 		this.password = password;
-	}
-
-	public User(String first_name, String last_name, String email, String password) {
-		super();
-		this.first_name = first_name;
-		this.last_name = last_name;
-		this.email = email;
-		this.password = password;
+		this.role = role;
 	}
 
 	public int getId() {
@@ -68,6 +69,14 @@ public class User {
 		this.password = password;
 	}
 	
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -77,6 +86,7 @@ public class User {
 		result = prime * result + id;
 		result = prime * result + ((last_name == null) ? 0 : last_name.hashCode());
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
+		result = prime * result + ((role == null) ? 0 : role.hashCode());
 		return result;
 	}
 
@@ -111,13 +121,18 @@ public class User {
 				return false;
 		} else if (!password.equals(other.password))
 			return false;
+		if (role == null) {
+			if (other.role != null)
+				return false;
+		} else if (!role.equals(other.role))
+			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", first_name=" + first_name + ", last_name=" + last_name + ", email=" + email
-				+ ", password=" + password + "]\n";
+				+ ", password=" + password + ", role=" + role + "]";
 	}
 
 	public static User map(ResultSet result) throws SQLException {
@@ -126,8 +141,9 @@ public class User {
 		String lastName = result.getString("last_name");
 		String email = result.getString("email");
 		String password = result.getString("password");
+		String role = result.getString("role");
 
-		return new User(id, firstName, lastName, email, password);
+		return new User(id, firstName, lastName, email, password,role);
 	}
 
 }

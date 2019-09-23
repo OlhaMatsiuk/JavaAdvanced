@@ -9,6 +9,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import logos.dao.SubscriptionsDao;
 import logos.domain.Subscriptions;
 import logos.utils.ConnectionUtils;
@@ -21,6 +23,8 @@ public class SubscriptionsDaoImpl implements SubscriptionsDao{
 	private static String UPDATE_BY_ID = "update subscriptions set user_id=?, magazine_id=?, status=?, start=?, duration=? where id = ?";
 	private static String DELETE_BY_ID = "delete from subscriptions where id=?";
 
+	private static Logger LOGGER = Logger.getLogger(SubscriptionsDaoImpl.class);
+	
 	private Connection connection;
 	private PreparedStatement preparedStatement;
 	
@@ -29,7 +33,7 @@ public class SubscriptionsDaoImpl implements SubscriptionsDao{
 			this.connection = ConnectionUtils.openConnection();
 			
 		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
-			e.printStackTrace();
+			LOGGER.error(e);
 		}
 	}
 
@@ -49,7 +53,7 @@ public class SubscriptionsDaoImpl implements SubscriptionsDao{
 			sub.setId(rs.getInt(1));
 			
 		} catch (SQLException e) {
-			e.printStackTrace();
+			LOGGER.error(e);
 		}
 		
 		return sub;
@@ -66,7 +70,7 @@ public class SubscriptionsDaoImpl implements SubscriptionsDao{
 			sub = Subscriptions.map(result);
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			LOGGER.error(e);
 		}
 
 		return sub;
@@ -83,7 +87,7 @@ public class SubscriptionsDaoImpl implements SubscriptionsDao{
 			preparedStatement.setInt(5, sub.getDuration());
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
-			e.printStackTrace();
+			LOGGER.error(e);
 		}
 		return sub;
 	}
@@ -95,7 +99,7 @@ public class SubscriptionsDaoImpl implements SubscriptionsDao{
 			preparedStatement.setInt(1, id);
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
-			e.printStackTrace();
+			LOGGER.error(e);
 		}
 		
 	}
@@ -110,7 +114,7 @@ public class SubscriptionsDaoImpl implements SubscriptionsDao{
 				listOfSubscribers.add(Subscriptions.map(result));
 			}
 		} catch (SQLException e) {
-			e.printStackTrace();
+			LOGGER.error(e);
 		}
 		return listOfSubscribers;
 	}

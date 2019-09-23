@@ -9,11 +9,21 @@ import logos.service.UserService;
 
 public class UserServiceImpl implements UserService{
 	
-	UserDao userDao;
+	private UserDao userDao;
+	private static UserService userServiceImpl;
 	
-	public UserServiceImpl() {
+	private UserServiceImpl() {
 		userDao = new UserDaoImpl();
 	}
+	
+	public static UserService getUserService() {
+		if (userServiceImpl == null) {
+			userServiceImpl = new UserServiceImpl();
+		}
+
+		return userServiceImpl;
+	}
+
 
 	@Override
 	public User create(User user) {
@@ -39,6 +49,11 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public List<User> readAll() {
 		return userDao.readAll();
+	}
+
+	@Override
+	public User getUserByEmail(String email) {
+		return userDao.getUserByEmail(email);
 	}
 
 }
