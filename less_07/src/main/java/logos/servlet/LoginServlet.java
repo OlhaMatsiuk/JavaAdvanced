@@ -19,14 +19,14 @@ public class LoginServlet extends HttpServlet {
 	private UserService userService = UserServiceImpl.getUserService();
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String email = request.getParameter("login");
+		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 
 		User user = userService.getUserByEmail(email);
 			
 		if (user != null && user.getPassword().equals(password)) {
 			UserLogin userLogin = new UserLogin();
-			userLogin.destinationUrl = "cabinet.jsp";
+			userLogin.destinationUrl = "jsp/cabinet.jsp";
 			userLogin.userEmail = user.getEmail();
 			String json = new Gson().toJson(userLogin);
 			response.setContentType("application/json");
