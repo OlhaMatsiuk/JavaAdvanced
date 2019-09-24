@@ -7,7 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.gson.Gson;
+
 import logos.domain.User;
+import logos.dto.UserLogin;
 import logos.service.UserService;
 import logos.service.impl.UserServiceImpl;
 
@@ -20,12 +23,15 @@ public class LoginServlet extends HttpServlet {
 		String password = request.getParameter("password");
 
 		User user = userService.getUserByEmail(email);
-	
+			
 		if (user != null && user.getPassword().equals(password)) {
-			request.setAttribute("email", email);
-			request.getRequestDispatcher("cabinet.jsp").forward(request, response);
-		}else {
-			request.getRequestDispatcher("login.jsp").forward(request, response);
+			UserLogin userLogin = new UserLogin();
+			userLogin.destinationUrl = "cabinet.jsp";
+			userLogin.userEmail = user.getEmail();
+			String json = new Gson().toJson(userLogin);
+			response.setContentType("application/json");
+			response.setCharacterEncoding("UTF-8");
+			response.getWriter().write(json);
 		}
 	}
 
