@@ -14,7 +14,7 @@ public class ConnectionUtils {
 		
 	public static Connection  openConnection() throws InstantiationException, 
 													IllegalAccessException, ClassNotFoundException, SQLException {
-		DOMConfigurator.configure("loggerConfig.xml");	
+     //   DOMConfigurator.configure("resources/loggerConfig.xml");	
 		Class.forName ("com.mysql.cj.jdbc.Driver").newInstance ();
 		return DriverManager.getConnection (URL, USER_NAME, USER_PASSWORD);
 	}	

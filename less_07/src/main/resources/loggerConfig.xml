@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE log4j:configuration SYSTEM "http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd">
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
 <log4j:configuration debug="true"
 	xmlns:log4j='http://jakarta.apache.org/log4j/'>
 
@@ -14,17 +14,17 @@
 
 	<appender name="fileAppender"
 		class="org.apache.log4j.FileAppender">
-		<param name="file" value="fileErrors.log"></param>
-		<param name="threshold" value="error"></param> 
+		<param name="file" value="server.log"></param>
+		<param name="threeshold" value="error"></param>
 		<layout class="org.apache.log4j.PatternLayout">
 			<param name="ConversionPattern"
 				value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n" />
 		</layout>
 
-		<!--  <filter class="org.apache.log4j.varia.LevelMatchFilter">
+		<filter class="org.apache.log4j.varia.LevelMatchFilter">
 			<param name="LevelToMatch" value="error" />
 			<param name="AcceprtOnMatch" value="true" />
-		</filter>  -->
+		</filter>
 
 		<filter class="org.apache.log4j.varia.DenyAllFilter" />
 	</appender>
