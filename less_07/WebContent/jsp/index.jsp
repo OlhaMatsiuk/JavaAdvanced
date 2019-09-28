@@ -12,11 +12,13 @@
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
 <link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="css/footer.css">
+
 
 <title>Magazine</title>
 </head>
 <body>
-
+	
 	<div class="login-page">
 		<div class="form">
 
@@ -57,8 +59,8 @@
 		
 	</div>
 
-	<jsp:include page="footer.jsp"></jsp:include>
-
+ 	<jsp:include page="footer.jsp"></jsp:include>
+ 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

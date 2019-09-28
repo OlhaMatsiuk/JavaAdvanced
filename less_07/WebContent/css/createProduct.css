@@ -1,0 +1,12 @@
+
+form.createProduct{
+	width: 30%;
+	margin-left: 20px;
+}
+button.createProduct{
+	background-color: #f0decc;
+	border: none;
+}
+button.createProduct:hover{
+	background-color: #d2b291;
+}

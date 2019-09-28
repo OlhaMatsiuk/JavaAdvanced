@@ -16,7 +16,7 @@ public class MagazineServiceImpl implements MagazineService{
 		magazineDao = new MagazineDaoImpl();
 	}
 	
-	public static MagazineService getMagazinetService() {
+	public static MagazineService getMagazineService() {
 		if (magazineServiceImp == null) {
 			magazineServiceImp = new MagazineServiceImpl();
 		}

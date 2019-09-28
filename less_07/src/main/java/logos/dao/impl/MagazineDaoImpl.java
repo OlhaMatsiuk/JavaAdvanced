@@ -1,7 +1,6 @@
 package logos.dao.impl;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -43,7 +42,7 @@ public class MagazineDaoImpl implements MagazineDao{
 			preparedStatement.setString(1, magazine.getTitle());
 			preparedStatement.setString(2, magazine.getCategory());
 			preparedStatement.setDouble(3, magazine.getPrice());
-			preparedStatement.setDate(4, new Date(magazine.getPublish_date().getTime()));
+			preparedStatement.setInt(4, magazine.getPublish_date());
 			preparedStatement.executeUpdate();
 			
 			ResultSet rs = preparedStatement.getGeneratedKeys();
@@ -81,7 +80,7 @@ public class MagazineDaoImpl implements MagazineDao{
 			preparedStatement.setString(1, magazine.getTitle());
 			preparedStatement.setString(2, magazine.getCategory());
 			preparedStatement.setDouble(3, magazine.getPrice());
-			preparedStatement.setDate(4, new Date(magazine.getPublish_date().getTime()));
+			preparedStatement.setInt(4, magazine.getPublish_date());
 			preparedStatement.setInt(5, magazine.getId());
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {

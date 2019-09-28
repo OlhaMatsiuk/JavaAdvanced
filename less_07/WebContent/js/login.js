@@ -24,10 +24,13 @@ $("button.register").click(
 			if (firstName == '' || lastName == '' || email == ''
 					|| password == '' || cpassword == '') {
 				alert("Please fill all fields...!!!!!!");
+				$("form")[1].show();
 			} else if ((password.length) < 8) {
 				alert("Password should atleast 8 character in length...!!!!!!");
+				$("form")[0].show();
 			} else if (!(password).match(cpassword)) {
 				alert("Your passwords don't match. Try again?");
+				$("form")[0].show();
 			} else {
 				var userRegistration = {
 					firstName : firstName,
