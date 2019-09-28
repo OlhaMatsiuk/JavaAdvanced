@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.google.gson.Gson;
+
 public class LogOutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -17,9 +19,11 @@ public class LogOutServlet extends HttpServlet {
 		if(session != null) {
 			session.invalidate();
 		}
-		response.setContentType("text");
+		
+		String json = new Gson().toJson("index.jsp");
+		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
-		response.getWriter().write("index.jsp");
+		response.getWriter().write(json);
 	}
 
 }

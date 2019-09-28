@@ -7,7 +7,7 @@ $(document).ready(function() {
 
 $("button.product-logout").click(function() {
 	
-	$.get("/logout", function(data) {
+	$.get("logout", function(data) {
 		if (data !== '') {
 			var customUrl = '';
 			var urlContent = window.location.href.split('/');

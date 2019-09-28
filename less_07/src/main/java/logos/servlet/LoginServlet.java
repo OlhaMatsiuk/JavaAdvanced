@@ -28,7 +28,7 @@ public class LoginServlet extends HttpServlet {
 			
 		if (user != null && user.getPassword().equals(password)) {
 			UserLogin userLogin = new UserLogin();
-			userLogin.destinationUrl = "jsp/cabinet.jsp";
+			userLogin.destinationUrl = "cabinet.jsp";
 			userLogin.userEmail = user.getEmail();
 			String json = new Gson().toJson(userLogin);
 			response.setContentType("application/json");

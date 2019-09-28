@@ -17,7 +17,7 @@
 	integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
 	crossorigin="anonymous">
 	
-<link rel="stylesheet" href="../css/cabinet.css">	
+<link rel="stylesheet" href="css/cabinet.css">	
 </head>
 
 <body>
@@ -40,6 +40,6 @@
 		crossorigin="anonymous"></script>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-		  <script src="../js/header.js"></script>
+		  <script src="js/header.js"></script>
 </body>
 </html>

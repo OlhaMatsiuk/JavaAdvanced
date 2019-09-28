@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="css/header.css">
 
 
 
@@ -13,12 +13,12 @@
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav animate side-nav">
           <li class="nav-item">
-            <a class="nav-link" href="${pageContext.request.contextPath}/jsp/cabinet.jsp">Home
+            <a class="nav-link" href="${pageContext.request.contextPath}/cabinet.jsp">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="${pageContext.request.contextPath}/jsp/createProduct.jsp">Add Magazine</a>
+            <a class="nav-link" href="${pageContext.request.contextPath}/createProduct.jsp">Add Magazine</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="${pageContext.request.contextPath}/bucket.jsp">Bucket</a>

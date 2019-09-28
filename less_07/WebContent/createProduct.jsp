@@ -1,6 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +17,7 @@
 	integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
 	crossorigin="anonymous">
 	
-	<link rel="stylesheet" href="../css/createProduct.css">
+	<link rel="stylesheet" href="css/createProduct.css">
 </head>
 <body>
 
@@ -73,7 +72,7 @@
 		crossorigin="anonymous"></script>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="../js/header.js"></script>
-	<script src="../js/createProduct.js"></script>
+	<script src="js/header.js"></script>
+	<script src="js/createProduct.js"></script>
 </body>
 </html>
