@@ -3,6 +3,7 @@ package logos.servlet;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,6 +12,7 @@ import logos.domain.Magazine;
 import logos.service.MagazineService;
 import logos.service.impl.MagazineServiceImpl;
 
+@WebServlet("/product")
 public class MagazineServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;

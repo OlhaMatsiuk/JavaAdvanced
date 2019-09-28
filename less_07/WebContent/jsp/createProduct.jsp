@@ -1,6 +1,6 @@
-  <%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,11 +18,10 @@
 	integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
 	crossorigin="anonymous">
 	
-<link rel="stylesheet" 	href="../css/createProduct.css">	
-	
-	
+	<link rel="stylesheet" href="../css/createProduct.css">
 </head>
 <body>
+
 	<jsp:include page="header.jsp"></jsp:include>
 
 	<div class="container-fluid">
@@ -30,32 +29,25 @@
 
 			<form class="createProduct">
 				<div class="form-group">
-				<label for = "productName" >Magazine  name</label>
-					<br>
 					<input type="text" class="form-control productName" 
-						placeholder="Vogue">
+						placeholder="enter product name">
 				</div>
 
 				<div class="form-group">
-				<label for = "productCategory" >Magazine  category</label>
-					<br>
 					<input type="text" class="form-control productCategory" 
-						placeholder="fashion">
+						placeholder="enter product category">
 				</div>
 
 				<div class="form-group">
-				<label for = "productPrice" >Magazine  price</label>
-					<br>
-					<input type="number"  class="form-control productPrice" 
-						placeholder="123">
+					<input type="number" class="form-control productPrice" 
+						placeholder="enter product price">
 				</div>
 				
 				<div class="form-group">
-					<label for = "productDate" >Date publication</label>
-					<br>
-					<input type="numbert" class="form-control productDate" 
-						placeholder="1999">
+					<input type="number" class="form-control productDate" 
+						placeholder="enter product date publication">
 				</div>
+				
 
 				<button class="btn btn-primary createProduct">Submit</button>
 			</form>
@@ -81,10 +73,7 @@
 		crossorigin="anonymous"></script>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-		<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-		
-		  <script src="../js/header.js"></script>
-		  <script src="../js/createProduct.js"></script>
+	<script src="../js/header.js"></script>
+	<script src="../js/createProduct.js"></script>
 </body>
 </html>

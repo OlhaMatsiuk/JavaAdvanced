@@ -1,5 +1,7 @@
 <link rel="stylesheet" href="../css/header.css">
 
+
+
   <div id="wrapper" class="animate">
     <nav class="navbar header-top fixed-top navbar-expand-lg  navbar-dark bg-dark">
       <span class="navbar-toggler-icon leftmenutrigger"></span>
@@ -11,24 +13,17 @@
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav animate side-nav">
           <li class="nav-item">
-            <a class="nav-link" href="${pageContext.request.contextPath}/jsp/cabinet.jsp">My cabinet
+            <a class="nav-link" href="${pageContext.request.contextPath}/jsp/cabinet.jsp">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
-        <li class="nav-item">
-            <a class="nav-link" href="${pageContext.request.contextPath}/jsp/createProduct.jsp">Add magazine</a>
+          <li class="nav-item">
+            <a class="nav-link" href="${pageContext.request.contextPath}/jsp/createProduct.jsp">Add Magazine</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="${pageContext.request.contextPath}/jsp/bucket.jsp">Bucket</a>
+            <a class="nav-link" href="${pageContext.request.contextPath}/bucket.jsp">Bucket</a>
           </li>
-          <li class="nav-item">
-<%--             <a class="nav-link" href="${pageContext.request.contextPath}/createProduct.jsp">add Periodical</a>
- --%>          </li>
-          <li class="nav-item">
-<%--             <a class="nav-link" href="${pageContext.request.contextPath}/bucket.jsp">Bucket</a>
- --%>          </li>
         </ul>
-        
         <ul class="navbar-nav ml-md-auto d-md-flex">
           <li class="nav-item">
             <button class="nav-link product-logout">LogOut</button>
@@ -38,4 +33,5 @@
     </nav>
   
   </div>
+  
   
