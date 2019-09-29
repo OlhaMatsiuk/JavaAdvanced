@@ -73,6 +73,6 @@
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="js/header.js"></script>
-	<script src="js/createProduct.js"></script>
+	<script src="js/serverForMagazine.js"></script>
 </body>
 </html>

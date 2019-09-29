@@ -7,6 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<div class="container-fluid">
+		<div class="row">
+					
+				<h1>Bucket of Product</h1>
+				
+		</div>
 
+	</div>
 </body>
 </html>

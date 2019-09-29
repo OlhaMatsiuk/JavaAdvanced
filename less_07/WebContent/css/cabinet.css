@@ -1,8 +1,15 @@
-body {
-	background-color: #e7dbd0;
-	
-}
-
 h1{
 	color:red;
+}
+
+h6.subtitle{
+	font-weight: bold;
+}
+
+.col{
+	display: inline-block;
+}
+
+html body {
+	background-color: #e7dbd0;
 }
