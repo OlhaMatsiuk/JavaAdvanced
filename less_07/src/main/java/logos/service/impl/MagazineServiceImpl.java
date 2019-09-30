@@ -1,6 +1,9 @@
 package logos.service.impl;
 
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 import logos.dao.MagazineDao;
 import logos.dao.impl.MagazineDaoImpl;
@@ -50,4 +53,11 @@ public class MagazineServiceImpl implements MagazineService{
 		return magazineDao.readAll();
 	}
 
+	@Override
+	public Map<Integer, Magazine> readAllMap() {
+		return  readAll().stream().collect(Collectors.toMap(Magazine::getId, Function.identity()));
+	}
+
 }
+
+

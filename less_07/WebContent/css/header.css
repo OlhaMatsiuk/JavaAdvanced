@@ -64,3 +64,8 @@ button.product-logout{
 button.product-logout:hover{
 	background-color: #d2b291;
 }
+form.createProduct {
+	margin: auto;
+	width: 50%;
+	padding: 10px;
+}

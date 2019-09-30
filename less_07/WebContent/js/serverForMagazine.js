@@ -25,7 +25,6 @@ $("button.buy-product").click(function() {
 	$.post("bucket", {'productId':productId},
 			function(data) {
 				if (data == 'Success') {
-			//		$('#buyProductModal').hide();
 					$("[data-dismiss=modal]").trigger({type:"click"});
 					alert('Success');
 				}

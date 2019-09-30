@@ -23,6 +23,16 @@ $.get("products", function(data) {
 					  "</div>"
 	});
 	
-	  $('#productCards').html(cardsContent);
-	
+	 $('#productCards').html(cardsContent);
+		
+}).done(function() {
+	$.get("user-role", function(data) {
+		if (data !== '') {
+			userRole = data;
+		}
+	}).done(function() {
+		if(userRole === 'Admin'){
+			$('a.productCardElement').hide();
+		}
+	});
 });
