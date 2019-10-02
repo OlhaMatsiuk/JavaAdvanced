@@ -22,6 +22,18 @@
 html body {
 	background-color: #e7dbd0;
 }
+
+button.btn-primary{
+	background-color: #082567;
+	border: none;
+	border-radius: 3px;
+}
+
+html button.btn-primaryl:hover{
+	background-color: #d2b291;
+	border: none;
+	border-radius: 3px;
+}
 </style>
 </head>
 <body>

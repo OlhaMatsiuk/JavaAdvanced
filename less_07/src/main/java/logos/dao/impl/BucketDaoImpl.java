@@ -102,7 +102,7 @@ public class BucketDaoImpl implements BucketDao{
 			while (result.next()) {
 				Integer bucketId = result.getInt("id");
 				Integer userId = result.getInt("user_id");
-				Integer productId = result.getInt("product_id");
+				Integer productId = result.getInt("magazine_id");
 				java.util.Date purchaseDate = result.getDate("purchase_date");
 				bucketRecords.add(new Bucket(bucketId, userId, productId, purchaseDate));
 			}

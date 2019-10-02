@@ -14,6 +14,7 @@ $("button.createProduct").click(function() {
 
 	$.post("product", product, function(data) {
 		$("form").reset();
+		alert("Success!")
 	});
 
 });

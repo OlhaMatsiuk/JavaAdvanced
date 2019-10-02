@@ -30,7 +30,7 @@ public class BucketServlet extends HttpServlet {
 		bucketService.create(bucket);
 		
 		
-		response.setContentType("text");
+		response.setContentType("text/html");
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().write("Success");
 	}

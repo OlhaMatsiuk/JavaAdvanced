@@ -32,7 +32,7 @@ $.get("products", function(data) {
 		}
 	}).done(function() {
 		if(userRole === 'Admin'){
-			$('a.productCardElement').hide();
+			$('a.card-link').hide();
 		}
 	});
 });

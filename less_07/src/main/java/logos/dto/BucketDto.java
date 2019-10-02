@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class BucketDto {
 	public Integer bucketId;
-	public String name;
+	public String title;
 	public String category;
 	public Double price;
 	public Integer publish_date;

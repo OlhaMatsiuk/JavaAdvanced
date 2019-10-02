@@ -49,7 +49,7 @@ public class BucketsController extends HttpServlet {
 			bucketDto.purchaseDate = bucket.getPurchaseDate();
 
 			Magazine magazine = idToProduct.get(bucket.getProductId());
-			bucketDto.name = magazine.getTitle();
+			bucketDto.title = magazine.getTitle();
 			bucketDto.category = magazine.getCategory();
 			bucketDto.publish_date = magazine.getPublish_date();
 			bucketDto.price = magazine.getPrice();

@@ -22,7 +22,7 @@ public class ProductFilter implements Filter {
 	}
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		filterService.doFilterValidation(request, response, chain, Arrays.asList(RoleUser.User));
+		filterService.doFilterValidation(request, response, chain, Arrays.asList(RoleUser.User,RoleUser.Admin));
 	}
 
 	public void init(FilterConfig fConfig) throws ServletException {

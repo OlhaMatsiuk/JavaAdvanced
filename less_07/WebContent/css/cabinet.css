@@ -13,3 +13,10 @@ h6.subtitle{
 html body {
 	background-color: #e7dbd0;
 }
+a.card-link{
+	color: #082567;
+}
+a.card-link:hover{
+	color: #92877d;
+}
+
