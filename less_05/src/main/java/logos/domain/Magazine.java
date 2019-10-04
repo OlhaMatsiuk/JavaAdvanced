@@ -6,8 +6,6 @@ import java.sql.SQLException;
 
 public class Magazine {
 	
-	
-	
 	private int id; 
     private String title;
     private String category;
