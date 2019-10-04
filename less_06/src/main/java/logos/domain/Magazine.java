@@ -21,6 +21,8 @@ public class Magazine {
 		this.publish_date = publish_date;
 	}
 
+	
+	
 	public Magazine(String title, String category, double price, Date publish_date) {
 		super();
 		this.title = title;
