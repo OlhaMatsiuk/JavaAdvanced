@@ -1,0 +1,19 @@
+
+form.createProduct{
+	width: 30%;
+	margin: auto;
+	padding: 10px;
+}
+button.createProduct{
+	background-color: #082567;
+	border: none;
+	border-radius: 3px;
+}
+button.createProduct:hover{
+	background-color: #d2b291;
+	border: none;
+	border-radius: 3px;
+}
+html body {
+	background-color: #e7dbd0;
+}

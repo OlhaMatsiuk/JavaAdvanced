@@ -1,0 +1,22 @@
+h1{
+	color:red;
+}
+
+h6.subtitle{
+	font-weight: bold;
+}
+
+.col{
+	display: inline-block;
+}
+
+html body {
+	background-color: #e7dbd0;
+}
+a.card-link{
+	color: #082567;
+}
+a.card-link:hover{
+	color: #92877d;
+}
+
