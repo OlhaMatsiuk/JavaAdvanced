@@ -16,11 +16,7 @@ public class BucketServiceImpl implements BucketService {
 	private BucketDao bucketDao;
 
 	private BucketServiceImpl() {
-		try {
-			bucketDao = new BucketDaoImpl();
-		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
-			LOGGER.error(e);
-		}
+		bucketDao = new BucketDaoImpl();
 	}
 
 	public static BucketService getBucketService() {

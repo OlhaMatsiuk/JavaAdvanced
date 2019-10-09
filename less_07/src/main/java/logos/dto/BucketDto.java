@@ -3,7 +3,7 @@ package logos.dto;
 import java.util.Date;
 
 public class BucketDto {
-	public Integer bucketId;
+	public int bucketId;
 	public String title;
 	public String category;
 	public Double price;

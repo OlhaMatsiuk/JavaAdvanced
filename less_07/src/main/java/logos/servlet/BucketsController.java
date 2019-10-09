@@ -27,7 +27,7 @@ public class BucketsController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	private BucketService bucketService = BucketServiceImpl.getBucketService();
-	private MagazineService magazineService = MagazineServiceImpl.getMagazineService();;
+	private MagazineService magazineService = MagazineServiceImpl.getMagazineService();
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -48,7 +48,7 @@ public class BucketsController extends HttpServlet {
 			bucketDto.bucketId = bucket.getId();
 			bucketDto.purchaseDate = bucket.getPurchaseDate();
 
-			Magazine magazine = idToProduct.get(bucket.getProductId());
+			Magazine magazine = idToProduct.get(bucket.getMagazine());
 			bucketDto.title = magazine.getTitle();
 			bucketDto.category = magazine.getCategory();
 			bucketDto.publish_date = magazine.getPublish_date();

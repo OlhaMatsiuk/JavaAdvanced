@@ -3,13 +3,33 @@ package logos.domain;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="magazine")
 public class Magazine {
 	
+	@Id
+	@GeneratedValue
 	private int id; 
+	
+	@Column
     private String title;
+	
+	@Column
     private String category;
+	
+	@Column
     private double price;
+	
+	@Column
 	private int publish_date;
+	
+	public Magazine() {}
 	
 	public Magazine(int id, String title, String category, double price, int publish_date) {
 		super();

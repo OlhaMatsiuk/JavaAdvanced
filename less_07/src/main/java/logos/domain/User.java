@@ -3,14 +3,36 @@ package logos.domain;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="user")
 public class User {
 
+	@Id
+	@GeneratedValue
 	private int id;
+	
+	@Column(name="first_name")
 	private String first_name;
+	
+	@Column(name="last_name")
 	private String last_name;
+	
+	@Column(name="email")
 	private String email;
+	
+	@Column(name="password")
 	private String password;
+	
+	@Column(name="role")
 	private String role;
+	
+	public User() {}
 	
 	public User(String first_name, String last_name, String email, String password, String role) {
 		this.first_name = first_name;

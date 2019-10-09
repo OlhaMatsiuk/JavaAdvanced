@@ -2,49 +2,72 @@ package logos.domain;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="bucket")
 public class Bucket {
 	
-	private Integer id;
-	private Integer userId;
-	private Integer productId;
+	@Id
+	@GeneratedValue
+	private int id;
+	
+	
+	@ManyToOne
+	@JoinColumn(name = "user_id", referencedColumnName = "id")
+	private User user;
+	
+	@ManyToOne
+	@JoinColumn(name = "magazine_id", referencedColumnName = "id")
+	private Magazine magazine;
+	
+	@Column(name = "purchase_date")
 	private Date purchaseDate;
 
-	public Bucket(Integer id, Integer userId, Integer productId, Date purchaseDate) {
+	public Bucket() {}
+	
+	public Bucket(int id, User user, Magazine magazine, Date purchaseDate) {
 		this.id = id;
-		this.userId = userId;
-		this.productId = productId;
+		this.user = user;
+		this.magazine = magazine;
 		this.purchaseDate = purchaseDate;
 	}
 
 	public Bucket(Integer userId, Integer productId, Date purchaseDate) {
-		super();
-		this.userId = userId;
-		this.productId = productId;
+		this.id = id;
+		this.user = user;
+		this.magazine = magazine;
 		this.purchaseDate = purchaseDate;
 	}
 
-	public Integer getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
-	public Integer getUserId() {
-		return userId;
+	public int getUser() {
+		return user.getId();
 	}
 
-	public void setUserId(Integer userId) {
-		this.userId = userId;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
-	public Integer getProductId() {
-		return productId;
+	public int getMagazine() {
+		return magazine.getId();
 	}
 
-	public void setProductId(Integer productId) {
-		this.productId = productId;
+	public void setMagazine(Magazine magazine) {
+		this.magazine = magazine;
 	}
 
 	public Date getPurchaseDate() {
@@ -55,14 +78,16 @@ public class Bucket {
 		this.purchaseDate = purchaseDate;
 	}
 
+
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((productId == null) ? 0 : productId.hashCode());
+		result = prime * result + id;
+		result = prime * result + ((magazine == null) ? 0 : magazine.hashCode());
 		result = prime * result + ((purchaseDate == null) ? 0 : purchaseDate.hashCode());
-		result = prime * result + ((userId == null) ? 0 : userId.hashCode());
+		result = prime * result + ((user == null) ? 0 : user.hashCode());
 		return result;
 	}
 
@@ -75,32 +100,29 @@ public class Bucket {
 		if (getClass() != obj.getClass())
 			return false;
 		Bucket other = (Bucket) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
+		if (id != other.id)
 			return false;
-		if (productId == null) {
-			if (other.productId != null)
+		if (magazine == null) {
+			if (other.magazine != null)
 				return false;
-		} else if (!productId.equals(other.productId))
+		} else if (!magazine.equals(other.magazine))
 			return false;
 		if (purchaseDate == null) {
 			if (other.purchaseDate != null)
 				return false;
 		} else if (!purchaseDate.equals(other.purchaseDate))
 			return false;
-		if (userId == null) {
-			if (other.userId != null)
+		if (user == null) {
+			if (other.user != null)
 				return false;
-		} else if (!userId.equals(other.userId))
+		} else if (!user.equals(other.user))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Bucket [id=" + id + ", userId=" + userId + ", productId=" + productId + ", purchaseDate=" + purchaseDate
+		return "Bucket [id=" + id + ", user=" + user + ", magazine=" + magazine + ", purchaseDate=" + purchaseDate
 				+ "]";
 	}
 
