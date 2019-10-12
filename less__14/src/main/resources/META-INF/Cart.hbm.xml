@@ -1,24 +1,25 @@
-<?xml version = "1.0" encoding = "utf-8"?>
+<!-- <?xml version = "1.0" encoding = "utf-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC 
 "-//Hibernate/Hibernate Mapping DTD//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-	<class name="logos.Item" table="item">
+	<class name="logos.Cart" table="Cart">
 		<id name="id" type="int" column="id">
 			<generator class="increment" />
 		</id>
 
 		<property name="total" column="total" type="string" />
+		<property name="name" column="name" type="string" />
 
-		<set name="carts" table="item_cart" inverse="true" lazy="true" fetch="select">
+		<set name="items" table="Cart_item" inverse="true" lazy="true" fetch="select">
 			<key>
-				<column name="item_id" not-null="true"></column>
-			</key>
-			<many-to-many entity-name="logos.Cart">
 				<column name="cart_id" not-null="true"></column>
+			</key>
+			<many-to-many entity-name="logos.Item">
+				<column name="item_id" not-null="true"></column>
 			</many-to-many>
 		</set>
 
 	</class>
-</hibernate-mapping>
+</hibernate-mapping -->>

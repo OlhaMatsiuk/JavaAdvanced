@@ -3,11 +3,33 @@ package logos;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Cart")
 public class Cart {
 
+	@Id
+	@GeneratedValue
+	@Column(name = "id")
 	private int id;
+	
+	@Column
 	private String total;
+	
+	@Column
 	private String name;
+	
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "Cart_item", joinColumns = @JoinColumn(name = "cart_id"), inverseJoinColumns = @JoinColumn(name = "item_id"))
 	private Set<Item> items = new HashSet<>();
 	
 	public Cart() {}
