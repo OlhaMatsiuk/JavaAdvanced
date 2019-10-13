@@ -12,7 +12,7 @@ import org.hibernate.service.ServiceRegistry;
 
 public class App {
 	public static void main(String[] args) {
-			
+
 		Configuration configuration = new Configuration();
 		configuration.configure("/META-INF/hibernate.cfg.xml");
 
@@ -20,38 +20,42 @@ public class App {
 				.applySettings(configuration.getProperties()).build();
 
 		SessionFactory factory = configuration.buildSessionFactory(serviceRegistry);
-		
+
 		Session session = factory.openSession();
 		Transaction transaction = session.beginTransaction();
 
 		Post post = new Post();
 		post.setTitle("MyApple");
-		
+
 		Comment comment1 = new Comment();
 		comment1.setAuthorName("Olha");
 		comment1.setPost(post);
-		
+
 		Comment comment2 = new Comment();
 		comment1.setAuthorName("Bohdan");
 		comment1.setPost(post);
-		
+
 		Comment comment3 = new Comment();
 		comment1.setAuthorName("Vika");
 		comment1.setPost(post);
-		
+
 		Set<Comment> comments = new HashSet<>();
 		comments.add(comment1);
 		comments.add(comment2);
 		comments.add(comment3);
-		
+
 		post.setComments(comments);
-		
+
 		session.save(post);
-		
+
 		transaction.commit();
 		session.close();
-		
-		
-		
+
+		Post postDB = (Post) session.get(Post.class, 1);
+		System.out.println(postDB + "---->" + postDB.getComments());
+
+		Comment commentDB = (Comment) session.get(Comment.class, 2);
+		System.out.println(commentDB + "---->" + commentDB.getPost());
+
 	}
 }
