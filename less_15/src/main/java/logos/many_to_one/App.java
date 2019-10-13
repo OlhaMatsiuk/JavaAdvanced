@@ -1,7 +1,7 @@
-package logos;
+package logos.many_to_one;
 
-import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Set;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -12,7 +12,7 @@ import org.hibernate.service.ServiceRegistry;
 
 public class App {
 	public static void main(String[] args) {
-
+			
 		Configuration configuration = new Configuration();
 		configuration.configure("/META-INF/hibernate.cfg.xml");
 
@@ -20,20 +20,38 @@ public class App {
 				.applySettings(configuration.getProperties()).build();
 
 		SessionFactory factory = configuration.buildSessionFactory(serviceRegistry);
-
-		Cart cart = new Cart("total", "name1");
-
-		Item total1 = new Item("total1");
-		Item total2 = new Item("total2");
-		cart.setItems(new HashSet<>(Arrays.asList(total1, total2)));
+		
 		Session session = factory.openSession();
-
 		Transaction transaction = session.beginTransaction();
 
-		session.persist(cart);
-
+		Post post = new Post();
+		post.setTitle("MyApple");
+		
+		Comment comment1 = new Comment();
+		comment1.setAuthorName("Olha");
+		comment1.setPost(post);
+		
+		Comment comment2 = new Comment();
+		comment1.setAuthorName("Bohdan");
+		comment1.setPost(post);
+		
+		Comment comment3 = new Comment();
+		comment1.setAuthorName("Vika");
+		comment1.setPost(post);
+		
+		Set<Comment> comments = new HashSet<>();
+		comments.add(comment1);
+		comments.add(comment2);
+		comments.add(comment3);
+		
+		post.setComments(comments);
+		
+		session.save(post);
+		
 		transaction.commit();
 		session.close();
-
+		
+		
+		
 	}
 }
