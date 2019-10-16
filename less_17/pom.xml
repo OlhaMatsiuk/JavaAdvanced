@@ -8,10 +8,10 @@
 		<version>2.1.9.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>less_16</groupId>
-	<artifactId>less_16</artifactId>
+	<groupId>logos</groupId>
+	<artifactId>less_17</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>less_16</name>
+	<name>less_17</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -21,9 +21,14 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
