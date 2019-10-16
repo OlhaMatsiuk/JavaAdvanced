@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>logos</groupId>
-	<artifactId>less_17</artifactId>
+	<artifactId>less_18</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>less_17</name>
+	<name>less_18</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -21,19 +21,25 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<scope>runtime</scope>
-		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
